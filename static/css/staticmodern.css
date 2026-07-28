@@ -1,0 +1,944 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==================================================
+                    RESET / ROOT
+================================================== */
+
+:root{
+
+--primary:#59c8c3;
+--primary-dark:#3db7b2;
+--secondary:#91dfdc;
+
+--bg:#eef4f4;
+
+--white:#ffffff;
+
+--text:#202124;
+
+--light:#6f7c84;
+
+--border:#dde7e8;
+
+--shadow:0 18px 40px rgba(0,0,0,.08);
+
+--shadow-hover:0 28px 55px rgba(0,0,0,.14);
+
+--radius:28px;
+
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:
+    linear-gradient(
+    120deg,
+    #72d2cf 0%,
+    #89dedd 32%,
+    #edf3f3 32%,
+    #edf3f3 100%
+    );
+    color:var(--text);
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* ==================================================
+                FLOATING SHAPES
+================================================== */
+
+.background-shapes{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+}
+
+.shape{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(90px);
+
+}
+
+.shape.one{
+
+    width:300px;
+    height:300px;
+
+    top:-80px;
+    left:-80px;
+
+    background:var(--primary);
+
+    opacity:.22;
+
+    animation:floatOne 8s ease-in-out infinite;
+
+}
+
+.shape.two{
+
+    width:360px;
+    height:360px;
+
+    top:22%;
+    right:-100px;
+
+    background:var(--secondary);
+
+    opacity:.20;
+
+    animation:floatTwo 10s ease-in-out infinite;
+
+}
+
+.shape.three{
+
+    width:260px;
+    height:260px;
+
+    left:40%;
+    bottom:-90px;
+
+    background:var(--primary-dark);
+
+    opacity:.18;
+
+    animation:floatThree 12s ease-in-out infinite;
+
+}
+
+@keyframes floatOne{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(40px);
+    }
+
+}
+
+@keyframes floatTwo{
+
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    50%{
+        transform:translateX(-40px);
+    }
+
+}
+
+@keyframes floatThree{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-45px);
+    }
+
+}
+
+/* ==================================================
+                    NAVBAR
+================================================== */
+
+.navbar{
+
+    padding:16px 28px;
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--border);
+
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+
+    transition:.35s ease;
+
+}
+
+.navbar:hover{
+
+    background:rgba(255,255,255,.9);
+
+}
+
+.navbar-brand{
+
+    color:var(--text) !important;
+
+    font-size:30px;
+
+    font-weight:700;
+
+    letter-spacing:.8px;
+
+}
+
+.navbar .btn{
+
+    padding:10px 22px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+/* ==================================================
+                    HERO
+================================================== */
+
+.hero{
+
+    padding:80px 20px;
+
+}
+
+.hero .container{
+
+    background:rgba(255,255,255,.94);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    box-shadow:var(--shadow);
+
+    animation:fadeDown .8s ease;
+
+    text-align:center;
+
+}
+
+.hero h1{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    margin-bottom:18px;
+
+    background:linear-gradient(90deg,var(--primary-dark),var(--primary),var(--secondary));
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:var(--light);
+
+    margin-bottom:28px;
+
+}
+
+.container.pb-5{
+
+    margin-top:50px;
+
+}
+
+/* ==================================================
+                SKILL BADGES
+================================================== */
+
+.badge-row{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.badge-row span{
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    transition:.35s ease;
+
+}
+
+.badge-row span:hover{
+
+    background:var(--primary);
+
+    color:white;
+
+    transform:translateY(-4px);
+
+}
+
+/* ==================================================
+                    ANIMATION
+================================================== */
+
+@keyframes fadeDown{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(-35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==================================================
+                PROJECT CARDS
+================================================== */
+
+.card-modern{
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    height:100%;
+
+    padding:35px 30px;
+
+    overflow:hidden;
+
+    border-radius:24px;
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid var(--border);
+
+    box-shadow:var(--shadow);
+
+    transition:all .4s ease;
+
+}
+
+.card-modern::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+
+    height:220px;
+
+    top:-90px;
+
+    right:-90px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    opacity:.08;
+
+    filter:blur(90px);
+
+    transition:.4s;
+
+}
+
+.card-modern:hover::before{
+
+    opacity:.16;
+
+}
+
+.card-modern:hover{
+
+    transform:translateY(-10px);
+
+    border-color:var(--primary);
+
+    box-shadow:var(--shadow-hover);
+
+}
+
+.card-modern>*{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+/* ==================================================
+                    ICON
+================================================== */
+
+.icon{
+
+    width:90px;
+
+    height:90px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:0 auto 25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,var(--primary),var(--secondary));
+
+    color:#ffffff;
+
+    font-size:38px;
+
+    box-shadow:0 12px 30px rgba(89,200,195,.35);
+
+    transition:all .45s ease;
+
+    flex-shrink:0;
+
+}
+
+.card-modern:hover .icon{
+
+    transform:rotate(360deg) scale(1.08);
+
+}
+
+/* ==================================================
+                    TITLE
+================================================== */
+
+.card-modern h3{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:18px;
+
+    transition:.35s;
+
+}
+
+.card-modern:hover h3{
+
+    color:var(--primary-dark);
+
+}
+
+/* ==================================================
+                DESCRIPTION
+================================================== */
+
+.card-modern p{
+
+    flex-grow:1;
+
+    color:var(--light);
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    margin-bottom:24px;
+
+}
+
+.card-modern:hover p{
+
+    color:var(--text);
+
+}
+
+/* ==================================================
+                    TAGS
+================================================== */
+
+.tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:25px;
+
+}
+
+.tags span{
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    background:#eef9f9;
+
+    border:1px solid var(--border);
+
+    color:var(--primary-dark);
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.tags span:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+}
+
+/* ==================================================
+                CARD ANIMATION
+================================================== */
+
+.card-modern{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.row.g-4{
+
+    row-gap:35px;
+
+}
+
+/* ==================================================
+                BUTTON GROUP
+================================================== */
+
+.button-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:auto;
+
+    width:100%;
+
+}
+
+/* ==================================================
+                    BUTTONS
+================================================== */
+
+.btn{
+
+    border-radius:12px;
+
+    padding:12px 18px;
+
+    font-weight:600;
+
+    transition:all .35s ease;
+
+}
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+    color:#ffffff;
+
+    box-shadow:0 10px 25px rgba(89,200,195,.35);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 25px rgba(89,200,195,.45);
+
+}
+
+.btn-outline-light{
+
+    border:1px solid var(--border);
+
+    color:var(--text);
+
+    background:white;
+
+}
+
+.btn-outline-light:hover{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+    border-color:var(--primary);
+
+}
+
+/* ==================================================
+            IMAGE EFFECTS
+================================================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+.card-modern img{
+
+    border-radius:16px;
+
+    transition:.4s ease;
+
+}
+
+.card-modern:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/* ==================================================
+            LINKS
+================================================== */
+
+a{
+
+    text-decoration:none;
+
+    transition:.35s ease;
+
+}
+
+/* ==================================================
+        SMOOTH TRANSITIONS
+================================================== */
+
+.card-modern,
+.icon,
+.btn,
+.tags span,
+.badge-row span{
+
+    transition:all .35s ease;
+
+}
+
+/* ==================================================
+            CUSTOM SCROLLBAR
+================================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#edf3f3;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/* ==================================================
+            TEXT SELECTION
+================================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:#ffffff;
+
+}
+
+/* ==================================================
+                RESPONSIVE
+================================================== */
+
+@media (max-width:992px){
+
+    .hero{
+
+        padding:70px 20px;
+
+    }
+
+    .hero .container{
+
+        padding:45px 35px;
+
+    }
+
+    .hero h1{
+
+        font-size:46px;
+
+    }
+
+    .card-modern{
+
+        padding:30px 25px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero{
+
+        padding:60px 15px;
+
+    }
+
+    .hero .container{
+
+        padding:35px 22px;
+
+    }
+
+    .hero h1{
+
+        font-size:36px;
+
+    }
+
+    .hero p{
+
+        font-size:16px;
+
+    }
+
+    .badge-row{
+
+        gap:10px;
+
+    }
+
+    .badge-row span{
+
+        font-size:13px;
+
+        padding:8px 15px;
+
+    }
+
+    .card-modern{
+
+        padding:25px;
+
+    }
+
+    .icon{
+
+        width:75px;
+
+        height:75px;
+
+        font-size:30px;
+
+    }
+
+    .card-modern h3{
+
+        font-size:22px;
+
+    }
+
+    .card-modern p{
+
+        font-size:14px;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .navbar{
+
+        padding:12px 16px;
+
+    }
+
+    .navbar-brand{
+
+        font-size:24px;
+
+    }
+
+    .hero h1{
+
+        font-size:30px;
+
+    }
+
+    .hero p{
+
+        font-size:15px;
+
+    }
+
+    .hero .container{
+
+        padding:28px 18px;
+
+    }
+
+    .card-modern{
+
+        border-radius:20px;
+
+    }
+
+    .tags{
+
+        gap:8px;
+
+    }
+
+    .tags span{
+
+        font-size:12px;
+
+        padding:6px 12px;
+
+    }
+
+    .btn{
+
+        width:100%;
+
+    }
+
+}
+
+/* ==================================================
+                    END
+================================================== */

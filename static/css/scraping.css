@@ -1,0 +1,767 @@
+/*==================================================
+            SCRAPING.CSS - PART 1
+            Premium Portfolio Theme
+==================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/*==================================================
+                VARIABLES
+==================================================*/
+
+:root{
+
+--primary:#59c8c3;
+--primary-dark:#39b5af;
+--secondary:#8fe0dc;
+
+--background:#eef4f4;
+
+--card:#ffffff;
+
+--text:#1f2937;
+
+--light:#6b7280;
+
+--border:#d8e6e6;
+
+--shadow:0 18px 40px rgba(0,0,0,.08);
+
+--shadow-hover:0 25px 55px rgba(0,0,0,.15);
+
+--radius:30px;
+
+}
+
+/*==================================================
+                    RESET
+==================================================*/
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+
+background:
+linear-gradient(
+120deg,
+#72d2cf 0%,
+#8adfdb 28%,
+#eef4f4 28%,
+#eef4f4 100%
+);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+min-height:100vh;
+
+}
+
+/*==================================================
+                SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#eef4f4;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:var(--primary-dark);
+
+}
+
+/*==================================================
+                TEXT SELECTION
+==================================================*/
+
+::selection{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+/*==================================================
+                NAVBAR
+==================================================*/
+
+.navbar{
+
+padding:18px 0;
+
+background:rgba(255,255,255,.82);
+
+backdrop-filter:blur(18px);
+
+box-shadow:0 8px 22px rgba(0,0,0,.05);
+
+position:sticky;
+
+top:0;
+
+z-index:999;
+
+}
+
+.navbar-brand{
+
+font-size:30px;
+
+font-weight:800;
+
+color:var(--text)!important;
+
+}
+
+.navbar .btn{
+
+border-radius:14px;
+
+padding:12px 28px;
+
+font-weight:600;
+
+transition:.35s;
+
+}
+
+.btn-dark{
+
+background:var(--primary);
+
+border:none;
+
+box-shadow:0 10px 25px rgba(89,200,195,.30);
+
+}
+
+.btn-dark:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-4px);
+
+}
+
+.btn-primary,
+.btn-success{
+
+background:var(--primary);
+
+border:none;
+
+border-radius:14px;
+
+transition:.35s;
+
+box-shadow:0 10px 25px rgba(89,200,195,.30);
+
+}
+
+.btn-primary:hover,
+.btn-success:hover{
+
+background:var(--primary-dark);
+
+transform:translateY(-4px);
+
+}
+
+/*==================================================
+                HERO
+==================================================*/
+
+.heading{
+
+padding:90px 20px 70px;
+
+}
+
+.heading .container{
+
+background:white;
+
+padding:70px 40px;
+
+border-radius:35px;
+
+box-shadow:var(--shadow);
+
+animation:fadeDown .8s ease;
+
+}
+
+.heading h1{
+
+font-size:60px;
+
+font-weight:800;
+
+color:var(--text);
+
+margin-bottom:18px;
+
+}
+
+.heading p{
+
+font-size:18px;
+
+color:var(--light);
+
+max-width:700px;
+
+margin:auto;
+
+line-height:1.9;
+
+}
+
+/*==================================================
+                CARD SECTION
+==================================================*/
+
+section{
+
+padding-bottom:90px;
+
+}
+
+.scrape-card{
+
+background:white;
+
+border-radius:30px;
+
+padding:40px 35px;
+
+text-align:center;
+
+height:100%;
+
+border:1px solid var(--border);
+
+box-shadow:var(--shadow);
+
+transition:.4s;
+
+position:relative;
+
+overflow:hidden;
+
+animation:fadeUp .8s ease;
+
+}
+
+.scrape-card::before{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:5px;
+
+background:linear-gradient(to right,var(--primary),var(--secondary));
+
+transform:scaleX(0);
+
+transform-origin:left;
+
+transition:.4s;
+
+}
+
+.scrape-card:hover::before{
+
+transform:scaleX(1);
+
+}
+
+.scrape-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:var(--shadow-hover);
+
+background:#fbffff;
+
+}
+
+/*==================================================
+                ANIMATIONS
+==================================================*/
+
+@keyframes fadeDown{
+
+from{
+
+opacity:0;
+
+transform:translateY(-40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(50px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+/*==================================================
+                ICON
+==================================================*/
+
+.icon{
+
+width:90px;
+height:90px;
+
+margin:0 auto 25px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+border-radius:24px;
+
+background:linear-gradient(135deg,#e9fbfa,#d8f8f6);
+
+color:var(--primary);
+
+font-size:38px;
+
+box-shadow:0 12px 28px rgba(89,200,195,.18);
+
+transition:.45s ease;
+
+}
+
+.scrape-card:hover .icon{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);
+
+color:white;
+
+transform:rotate(-10deg) scale(1.08);
+
+box-shadow:0 18px 35px rgba(89,200,195,.35);
+
+}
+
+/*==================================================
+                TITLE
+==================================================*/
+
+.scrape-card h3{
+
+font-size:26px;
+
+font-weight:700;
+
+margin-bottom:18px;
+
+color:var(--text);
+
+transition:.35s;
+
+}
+
+.scrape-card:hover h3{
+
+color:var(--primary-dark);
+
+}
+
+/*==================================================
+            DESCRIPTION
+==================================================*/
+
+.scrape-card p{
+
+font-size:15px;
+
+line-height:1.9;
+
+color:var(--light);
+
+margin-bottom:28px;
+
+min-height:110px;
+
+}
+
+/*==================================================
+                BUTTON
+==================================================*/
+
+.scrape-card .btn{
+
+width:100%;
+
+padding:14px 20px;
+
+font-size:15px;
+
+font-weight:600;
+
+border-radius:14px;
+
+transition:.35s;
+
+}
+
+.scrape-card .btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/*==================================================
+            LINK STYLE
+==================================================*/
+
+.scrape-card a{
+
+text-decoration:none;
+
+display:block;
+
+}
+
+/*==================================================
+        DECORATIVE GLOW
+==================================================*/
+
+.scrape-card::after{
+
+content:"";
+
+position:absolute;
+
+width:220px;
+
+height:220px;
+
+right:-120px;
+
+top:-120px;
+
+border-radius:50%;
+
+background:rgba(89,200,195,.08);
+
+transition:.45s;
+
+}
+
+.scrape-card:hover::after{
+
+transform:scale(1.25);
+
+opacity:.9;
+
+}
+
+/*==================================================
+            CONTAINER
+==================================================*/
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+}
+
+.row.g-4{
+
+row-gap:35px;
+
+}
+
+/*==================================================
+            HOVER EFFECT
+==================================================*/
+
+.scrape-card:hover{
+
+background:linear-gradient(
+180deg,
+#ffffff,
+#f9ffff
+);
+
+}
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:992px){
+
+.heading{
+
+padding:70px 20px 50px;
+
+}
+
+.heading .container{
+
+padding:50px 30px;
+
+}
+
+.heading h1{
+
+font-size:46px;
+
+}
+
+.scrape-card{
+
+padding:30px;
+
+}
+
+.icon{
+
+width:80px;
+
+height:80px;
+
+font-size:34px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.navbar-brand{
+
+font-size:24px;
+
+}
+
+.heading{
+
+padding:60px 15px 40px;
+
+}
+
+.heading .container{
+
+padding:40px 22px;
+
+}
+
+.heading h1{
+
+font-size:36px;
+
+}
+
+.heading p{
+
+font-size:16px;
+
+}
+
+.scrape-card{
+
+padding:25px;
+
+}
+
+.scrape-card h3{
+
+font-size:22px;
+
+}
+
+.scrape-card p{
+
+font-size:14px;
+
+min-height:auto;
+
+}
+
+.icon{
+
+width:70px;
+
+height:70px;
+
+font-size:30px;
+
+margin-bottom:20px;
+
+}
+
+.scrape-card .btn{
+
+padding:12px;
+
+font-size:14px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.heading h1{
+
+font-size:30px;
+
+}
+
+.heading p{
+
+font-size:15px;
+
+}
+
+.scrape-card{
+
+border-radius:24px;
+
+}
+
+.scrape-card .btn{
+
+width:100%;
+
+}
+
+}
+
+/*==================================================
+        SMOOTH TRANSITIONS
+==================================================*/
+
+.scrape-card,
+.icon,
+.btn,
+.heading .container,
+.navbar{
+
+transition:all .35s ease;
+
+}
+
+/*==================================================
+        FLOATING ANIMATION
+==================================================*/
+
+.scrape-card:nth-child(1){
+
+animation-delay:.1s;
+
+}
+
+.scrape-card:nth-child(2){
+
+animation-delay:.25s;
+
+}
+
+.scrape-card:nth-child(3){
+
+animation-delay:.4s;
+
+}
+
+/*==================================================
+            OPTIONAL CARD SHINE
+==================================================*/
+
+.scrape-card{
+
+overflow:hidden;
+
+}
+
+.scrape-card .shine{
+
+display:none;
+
+}
+
+.scrape-card:hover{
+
+cursor:pointer;
+
+}
+
+/*==================================================
+                END
+==================================================*/
