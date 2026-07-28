@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Week 5 | Flask Portfolio Development</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/week5.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="bg-circle one"></div>
+<div class="bg-circle two"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold" href="/">
+Tamanna
+</a>
+
+<a href="{{ url_for('internshipweeks') }}"
+class="btn btn-outline-light">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="text-center">
+
+<span class="week-tag">
+
+Week 05
+
+</span>
+
+<h1>
+
+Flask Portfolio Development
+
+</h1>
+
+<h3>
+
+Python • Flask • HTML • CSS • Bootstrap • Jinja2
+
+</h3>
+
+<p>
+
+During the fifth week of my internship, I focused on developing a
+complete personal portfolio using the Flask framework. This week
+combined everything I had learned throughout the internship into a
+single professional web application. I designed multiple pages,
+created reusable templates, integrated all previously developed web
+scraping projects, connected Python scripts with Flask routes, and
+developed a modern responsive user interface. The portfolio now acts
+as a complete showcase of my internship journey, technical skills,
+Python projects, AI work, and web scraping applications.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DEVELOPMENT SUMMARY ================= -->
+
+<section class="container py-5">
+
+<div class="section-heading">
+
+<h2>
+
+Portfolio Development Summary
+
+</h2>
+
+<p>
+
+Building a professional portfolio using Flask by integrating all
+internship projects into one responsive application.
+
+</p>
+
+</div>
+
+<div class="summary-card">
+
+<p>
+
+The portfolio was developed using the Flask web framework, where each
+project was organized into separate routes and templates. Every page
+was styled with modern glassmorphism components and responsive layouts
+to provide a clean user experience on both desktop and mobile devices.
+
+</p>
+
+<p>
+
+Throughout the development process, all web scraping projects created
+during previous internship weeks—including Static Web Scraping,
+Dynamic Web Scraping, and API Data Collection—were integrated into the
+portfolio. Each project includes a dedicated page displaying the
+scraped results, project description, technologies used, and source
+code navigation.
+
+</p>
+
+<p>
+
+Reusable Jinja templates were used for rendering dynamic data directly
+from Python. Flask routes handled page navigation while CSS provided a
+consistent design system across the entire application. Bootstrap was
+combined with custom styling to create professional layouts, animated
+cards, responsive grids, and interactive buttons.
+
+</p>
+
+<p>
+
+The completed portfolio demonstrates practical knowledge of Flask,
+Python programming, HTML, CSS, Bootstrap, web scraping, responsive
+design, template rendering, routing, and project deployment concepts.
+It serves as a central platform to showcase all internship work in an
+organized and user-friendly manner.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= TECHNOLOGIES ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Technologies Used
+
+</h2>
+
+<p>
+
+Core technologies used while building the Flask Portfolio.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-brands fa-python"></i>
+
+<h5>Python</h5>
+
+<p>
+
+Developed backend logic, routing,
+and integrated scraping scripts.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-flask"></i>
+
+<h5>Flask</h5>
+
+<p>
+
+Created dynamic routes,
+templates, and project navigation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-brands fa-html5"></i>
+
+<h5>HTML & CSS</h5>
+
+<p>
+
+Designed responsive layouts,
+glassmorphism cards and animations.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-brands fa-bootstrap"></i>
+
+<h5>Bootstrap</h5>
+
+<p>
+
+Responsive grid system,
+buttons and utility classes.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-code"></i>
+
+<h5>Jinja2</h5>
+
+<p>
+
+Dynamic rendering of project
+data using Flask templates.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-palette"></i>
+
+<h5>UI Design</h5>
+
+<p>
+
+Modern interface with reusable
+components and responsive styling.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= PORTFOLIO FEATURES ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Portfolio Features
+
+</h2>
+
+<p>
+
+Major sections and functionalities integrated into the Flask Portfolio.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4 col-md-6">
+
+<div class="project-card">
+
+<i class="fa-solid fa-folder-open"></i>
+
+<h4>Project Showcase</h4>
+
+<p>
+
+Created dedicated pages for Python, Machine Learning,
+Flask, AI, and Web Scraping projects with organized navigation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="project-card">
+
+<i class="fa-solid fa-globe"></i>
+
+<h4>Responsive Design</h4>
+
+<p>
+
+Designed a modern responsive interface using Bootstrap,
+custom CSS and reusable layouts for every screen size.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4 col-md-6">
+
+<div class="project-card">
+
+<i class="fa-solid fa-database"></i>
+
+<h4>Dynamic Data</h4>
+
+<p>
+
+Displayed scraped datasets dynamically using Flask routes,
+Jinja templates and Python backend integration.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= DEVELOPMENT WORKFLOW ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Development Workflow
+
+</h2>
+
+<p>
+
+Step-by-step process followed while building the portfolio.
+
+</p>
+
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h4>Step 1 — Planning</h4>
+
+<p>
+
+Planned the overall portfolio structure by identifying project
+categories, required web pages, routing system and navigation flow.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>Step 2 — Flask Setup</h4>
+
+<p>
+
+Configured Flask, organized folders, created templates,
+static assets and reusable HTML layouts.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>Step 3 — Project Integration</h4>
+
+<p>
+
+Integrated Static Scraping, Dynamic Scraping,
+API projects, internship work and practice notebooks
+into separate portfolio pages.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>Step 4 — UI Development</h4>
+
+<p>
+
+Designed glassmorphism cards, animations,
+responsive layouts, navigation bars and interactive buttons.
+
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h4>Step 5 — Testing</h4>
+
+<p>
+
+Verified routing, template rendering,
+responsive layouts and project navigation
+before finalizing the portfolio.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= KEY SKILLS ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Key Skills Developed
+
+</h2>
+
+<p>
+
+Technical knowledge gained during Week 5.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-layer-group"></i>
+
+<h5>Flask Routing</h5>
+
+<p>
+
+Created multiple routes and
+dynamic page navigation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-code"></i>
+
+<h5>Template Rendering</h5>
+
+<p>
+
+Integrated Python data with
+Jinja2 HTML templates.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h5>Responsive UI</h5>
+
+<p>
+
+Designed modern layouts using
+Bootstrap and CSS.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-3">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-palette"></i>
+
+<h5>Frontend Design</h5>
+
+<p>
+
+Created reusable components
+with modern styling.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PORTFOLIO STATISTICS ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Portfolio Highlights
+
+</h2>
+
+<p>
+
+A summary of the work integrated into the portfolio.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="project-card">
+
+<h1>20+</h1>
+
+<p>Projects Integrated</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="project-card">
+
+<h1>15+</h1>
+
+<p>Flask Pages</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="project-card">
+
+<h1>3</h1>
+
+<p>Scraping Categories</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="project-card">
+
+<h1>100%</h1>
+
+<p>Responsive Design</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= VISIT PORTFOLIO ================= -->
+
+<section class="container pb-5">
+
+<div class="visit-card text-center">
+
+<h2>
+
+Explore My Complete Portfolio
+
+</h2>
+
+<p>
+
+Visit the complete Flask Portfolio to explore all internship
+projects, web scraping applications, AI projects, Python notebooks,
+and responsive web pages developed during the internship.
+
+</p>
+
+<a href="{{ url_for('portfolio') }}" class="btn-main">
+
+<i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+Visit Portfolio
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container text-center">
+
+<p>
+
+© 2026 Tamanna | Flask Portfolio Development | Week 05 Internship
+
+</p>
+
+</div>
+
+</footer>
+
+</body>
+
+</html>
+

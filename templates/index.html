@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Tamanna | Python Developer</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<!-- Background -->
+<div class="background-shapes">
+    <span class="shape one"></span>
+    <span class="shape two"></span>
+</div>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg py-3">
+
+    <div class="container">
+
+        <a class="navbar-brand logo" href="#">
+            Tamanna<span class="dot">.</span>
+        </a>
+
+        <button class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#menu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="{{ url_for('portfolio') }}">
+                        Portfolio
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                        href="{{ url_for('learnmore') }}">
+                        Learn More
+                    </a>
+                </li>
+
+                <li class="nav-item ms-lg-3">
+                    <a class="nav-link nav-cta"
+                        href="{{ url_for('portfolio') }}">
+                        Hire Me
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="row align-items-center gy-5">
+
+<!-- Left -->
+
+<div class="col-lg-6">
+
+<div class="hero-content">
+
+<div class="status-pill">
+
+<span class="pulse-dot"></span>
+
+Available for new opportunities
+
+</div>
+
+<h4 class="greeting">
+
+Hi, I'm
+
+</h4>
+
+<h1 class="name">
+
+Tamanna
+
+</h1>
+
+<div class="role-tag">
+
+&lt;<span id="typed-role">Python&nbsp;Developer</span>&nbsp;/&gt;
+
+</div>
+
+<p class="description">
+
+I build intelligent, data-driven applications using
+<strong>Python</strong>,
+<strong>Flask</strong>,
+<strong>Machine Learning</strong>,
+<strong>SQL</strong>,
+<strong>Artificial Intelligence</strong>,
+and
+<strong>Web Scraping</strong>.
+Focused on clean architecture, readable code, and interfaces
+that solve real problems for real people.
+
+</p>
+
+<!-- Buttons -->
+
+<div class="hero-buttons">
+
+<a href="{{ url_for('portfolio') }}"
+class="btn btn-main">
+
+My Portfolio
+
+<i class="fa-solid fa-arrow-right"></i>
+
+</a>
+
+<a href="{{ url_for('learnmore') }}"
+class="btn btn-outline-custom">
+
+<i class="fa-solid fa-folder-open"></i>
+
+View Projects
+
+</a>
+
+</div>
+
+<!-- Tech stack strip -->
+
+<div class="stack-label">
+Working with
+</div>
+
+<div class="tech-stack">
+
+<span class="tech-chip" title="Python">
+<i class="fa-brands fa-python"></i>
+</span>
+
+<span class="tech-chip" title="Flask">
+<i class="fa-solid fa-flask"></i>
+</span>
+
+<span class="tech-chip" title="SQL">
+<i class="fa-solid fa-database"></i>
+</span>
+
+<span class="tech-chip" title="Machine Learning">
+<i class="fa-solid fa-robot"></i>
+</span>
+
+<span class="tech-chip" title="Web Scraping">
+<i class="fa-solid fa-spider"></i>
+</span>
+
+<span class="tech-chip" title="Git">
+<i class="fa-brands fa-git-alt"></i>
+</span>
+
+</div>
+
+<!-- Social -->
+
+<div class="social-links">
+
+<a href="https://github.com/tamanna-saini123/tamanna-saini123" title="GitHub">
+
+<i class="fab fa-github"></i>
+
+</a>
+
+<a href="https://www.linkedin.com/in/tamanna-saini-1806a5415/" title="LinkedIn">
+
+<i class="fab fa-linkedin"></i>
+
+</a>
+
+<a href="tamannasaini33@gmail.com" title="Email">
+
+<i class="fas fa-envelope"></i>
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right -->
+
+<div class="col-lg-6 text-center">
+
+<div class="profile-wrapper">
+
+<div class="frame-offset"></div>
+
+<img src="{{ url_for('static', filename='images/proffphoto.jpeg') }}"
+class="profile-image"
+alt="Tamanna">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Typewriter effect for role tag -->
+<script>
+(function(){
+
+    var roles = [
+        "Python Developer",
+        "AI & ML Enthusiast",
+        "Web Scraping "
+    ];
+
+    var el = document.getElementById("typed-role");
+    if(!el) return;
+
+    var roleIndex = 0;
+    var charIndex = roles[0].length;
+    var deleting = false;
+
+    function tick(){
+
+        var current = roles[roleIndex];
+
+        if(!deleting){
+
+            charIndex++;
+
+            if(charIndex > current.length){
+                deleting = true;
+                setTimeout(tick, 1600);
+                return;
+            }
+
+        } else {
+
+            charIndex--;
+
+            if(charIndex < 0){
+                deleting = false;
+                roleIndex = (roleIndex + 1) % roles.length;
+                charIndex = 0;
+            }
+
+        }
+
+        el.textContent = roles[roleIndex].slice(0, charIndex).replace(/ /g, "\u00A0");
+
+        setTimeout(tick, deleting ? 40 : 75);
+
+    }
+
+    setTimeout(tick, 1600);
+
+})();
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title> SQL, Python & Synthetic Data</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/minorprojects2.css') }}">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Background -->
+
+<div class="bg-circle one"></div>
+<div class="bg-circle two"></div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg">
+
+<div class="container">
+
+<a class="navbar-brand fw-bold"
+href="/">
+
+Tamanna
+
+</a>
+
+<a href="{{ url_for('internshipweeks') }}"
+class="btn btn-outline-light">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Back
+
+</a>
+
+</div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="text-center">
+
+<span class="week-tag">
+
+
+
+</span>
+
+<h1>
+
+SQL, Python Libraries & Synthetic Data
+
+</h1>
+
+<h3>
+
+Database Concepts, Data Generation & Data Analysis
+
+</h3>
+
+<p>
+
+During the second week of my internship, I strengthened my understanding of
+SQL, database management, Python string operations, Python libraries,
+and synthetic data generation. I also worked on creating synthetic datasets
+and built a Heart Attack Risk Prediction dataset that can be used for
+machine learning experiments and data analysis.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LEARNING OUTCOMES ================= -->
+
+<section class="container py-5">
+
+<div class="section-heading">
+
+<h2>
+
+Learning Outcomes
+
+</h2>
+
+<p>
+
+Skills and technologies explored during Week 2.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-database"></i>
+
+<h5>SQL</h5>
+
+<p>
+
+Database creation, queries,
+joins and CRUD operations.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-table"></i>
+
+<h5>Synthetic Data</h5>
+
+<p>
+
+Generated realistic datasets
+for analytics and AI projects.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-code"></i>
+
+<h5>Python Strings</h5>
+
+<p>
+
+String manipulation,
+functions and formatting.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-3 col-md-6">
+
+<div class="skill-box">
+
+<i class="fa-solid fa-cubes"></i>
+
+<h5>Python Libraries</h5>
+
+<p>
+
+NumPy,
+Pandas,
+Matplotlib and more.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LEARNING RESOURCES ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Learning Resources
+
+</h2>
+
+<p>
+
+Explore notebooks, datasets and practice work completed during Week 2.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- Notebook 1 -->
+
+<div class="col-lg-4">
+
+<div class="resource-card">
+
+<div class="resource-header">
+
+<i class="fa-solid fa-database"></i>
+
+<h3>
+
+Notebook 1
+
+</h3>
+
+</div>
+
+<div class="resource-body">
+
+<h5>
+
+Synthetic Data Generation
+
+</h5>
+
+<p>
+
+Learned how to create realistic synthetic datasets
+using Python for testing,
+analysis,
+machine learning,
+and visualization.
+
+</p>
+
+<div class="button-group">
+
+    <a href="{{ url_for('static', filename='docs/Syntheticdataproject.html') }}"
+       target="_blank"
+       class="resource-btn">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        View Notebook
+
+    </a>
+
+    <a href="{{ url_for('static', filename='Datasets/synthetic_data.csv') }}"
+       download
+       class="download-btn">
+
+        <i class="fa-solid fa-download"></i>
+
+        Download CSV
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Notebook 2 -->
+
+<div class="col-lg-4">
+
+<div class="resource-card">
+
+<div class="resource-header">
+
+<i class="fa-solid fa-heart-pulse"></i>
+
+<h3>
+
+Notebook 2
+
+</h3>
+
+</div>
+
+<div class="resource-body">
+
+<h5>
+
+Heart Attack Risk Prediction
+using Synthetic Data
+
+</h5>
+
+<p>
+
+Generated a healthcare dataset containing
+patient records for Heart Attack Risk Prediction
+and explored it using Pandas.
+
+</p>
+
+<div class="button-group">
+
+    <a href="{{ url_for('static', filename='docs/HeartAttackRisk_prediction.html') }}"
+       target="_blank"
+       class="resource-btn">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        View Notebook
+
+    </a>
+
+    <a href="{{ url_for('static', filename='Datasets/Heart_Attack_Risk_synthetic_data.csv') }}"
+       download
+       class="download-btn">
+
+        <i class="fa-solid fa-download"></i>
+
+        Download CSV
+
+    </a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Notebook 3 -->
+
+<div class="col-lg-4">
+
+<div class="resource-card">
+
+<div class="resource-header">
+
+<i class="fa-solid fa-laptop-code"></i>
+
+<h3>
+
+Notebook 3
+
+</h3>
+
+</div>
+
+<div class="resource-body">
+
+<h5>
+
+Strings &
+Python Libraries
+
+</h5>
+
+<p>
+
+Explored Python strings,
+string methods,
+functions,
+modules,
+packages,
+NumPy,
+Pandas,
+Matplotlib,
+and practical examples.
+
+</p>
+
+<div class="btn-group-custom">
+
+<a href="{{ url_for('static',
+filename='docs/week2_strings.html') }}"
+target="_blank"
+class="resource-btn">
+
+<i class="fa-solid fa-book-open"></i>
+
+View Notebook
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= MINI PROJECTS ================= -->
+
+<section class="container pb-5">
+
+<div class="section-heading">
+
+<h2>
+
+Mini Projects
+
+</h2>
+
+<p>
+
+Hands-on activities completed during Week 2.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fa-solid fa-file-csv"></i>
+
+<h4>
+
+Synthetic Data Generator
+
+</h4>
+
+<p>
+
+Created realistic datasets for AI
+and data science practice.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fa-solid fa-heart-circle-check"></i>
+
+<h4>
+
+Healthcare Dataset
+
+</h4>
+
+<p>
+
+Generated a Heart Attack Risk dataset
+for machine learning experiments.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="project-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h4>
+
+Python Practice
+
+</h4>
+
+<p>
+
+Solved problems using
+strings,
+libraries,
+and SQL concepts.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+

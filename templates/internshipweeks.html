@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Internship Journey</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/internshipweeks.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="background-shapes">
+
+    <span class="shape one"></span>
+    <span class="shape two"></span>
+    <span class="shape three"></span>
+
+</div>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar navbar-expand-lg">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold" href="/">
+            Tamanna
+        </a>
+
+        <a href="{{ url_for('internship') }}"
+           class="btn btn-outline-light">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Back
+
+        </a>
+
+    </div>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="container text-center">
+
+        <h1 class="section-title">
+
+            <i class="fa-solid fa-graduation-cap"></i>
+
+            My Internship Journey
+
+        </h1>
+
+        <p class="section-subtitle">
+
+            A six-week learning experience at
+            <strong>CodroidHub</strong> covering
+            Python Programming, SQL, Web Scraping,
+            REST APIs, Flask Development, and
+            Artificial Intelligence.
+
+        </p>
+
+        <div class="badge-row">
+
+            <span>Python</span>
+            <span>SQL</span>
+            <span>Flask</span>
+            <span>Web Scraping</span>
+            <span>REST APIs</span>
+            <span>AI</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= WEEKS ================= -->
+
+<section class="container pb-5">
+
+    <div class="row g-4">
+
+        <!-- Week 1 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">01</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-brands fa-python"></i>
+
+                </div>
+
+                <h3>Week 1</h3>
+
+                <p>
+
+                    Python Fundamentals, Variables,
+                    Loops, Functions, Data Types,
+                    and Problem Solving.
+
+                </p>
+
+                <a href="{{ url_for('week1') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Week 2 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">02</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-solid fa-database"></i>
+
+                </div>
+
+                <h3>Week 2</h3>
+
+                <p>
+
+                    SQL Queries, Database Design,
+                    CRUD Operations,
+                    and Data Management.
+
+                </p>
+
+                <a href="{{ url_for('week2') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Week 3 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">03</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-solid fa-spider"></i>
+
+                </div>
+
+                <h3>Week 3</h3>
+
+                <p>
+
+                    BeautifulSoup, Requests,
+                    Selenium,
+                    Static & Dynamic Web Scraping.
+
+                </p>
+
+                <a href="{{ url_for('week3') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Week 4 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">04</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-solid fa-cloud"></i>
+
+                </div>
+
+                <h3>Week 4</h3>
+
+                <p>
+
+                    REST APIs, JSON,
+                    Data Acquisition,
+                    API Integration Projects.
+
+                </p>
+
+                <a href="{{ url_for('week4') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Week 5 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">05</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-solid fa-code"></i>
+
+                </div>
+
+                <h3>Week 5</h3>
+
+                <p>
+
+                    Flask Framework,
+                    Routing, Templates,
+                    Portfolio Development.
+
+                </p>
+
+                <a href="{{ url_for('week5') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- Week 6 -->
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="week-card">
+
+                <div class="week-number">06</div>
+
+                <div class="week-icon">
+
+                    <i class="fa-solid fa-robot"></i>
+
+                </div>
+
+                <h3>Week 6</h3>
+
+                <p>
+
+                    AI Project Cycle,
+                    Testing,
+                    Deployment,
+                    Final Project Presentation.
+
+                </p>
+
+                <a href="{{ url_for('week6') }}"
+                   class="btn-main">
+
+                    View Work
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

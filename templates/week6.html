@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Feedback Analysis Platform — Tamanna</title>
+<meta name="description" content="A Flask + SQLite + Gemini AI platform for generating, collecting and analyzing feedback forms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/week6.css') }}">
+
+</head>
+<body>
+
+<div class="bg-circle one"></div>
+<div class="bg-circle two"></div>
+
+<header>
+  <div class="wrap nav">
+    <a href="https://feedbackformgenerator-and-awfk.onrender.com" class="nav-brand">
+      <span class="signal-mark"><i></i><i></i><i></i><i></i></span>
+      FeedbackAI
+    </a>
+    <nav class="nav-links">
+      <a href="https://feedbackformgenerator-and-awfk.onrender.com" target="_blank" rel="noopener">Live Demo</a>
+      <a href="#overview">Overview</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#database">Database</a>
+      <a href="#ai-engine">AI Engine</a>
+      <a href="#features">Features</a>
+      <a href="#stack">Stack</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="signal-mark" style="height:12px;"><i></i><i></i><i></i><i></i></span> AI-Powered Platform</span>
+      <h1>AI Feedback Analysis Platform</h1>
+      <p class="lede">
+        A Flask app that turns a one-line topic into a shareable feedback form, then reads every
+        open-ended answer back with Gemini AI — sentiment, themes, and a summary — the moment
+        responses land in SQLite.
+      </p>
+      <div class="cta-row">
+        <a href="https://feedbackformgenerator-and-awfk.onrender.com" target="_blank" rel="noopener" class="btn btn-primary">View Live Demo</a>
+        <a href="#workflow" class="btn btn-ghost">Explore workflow</a>
+        <a href="#ai-engine" class="btn btn-ghost">AI features</a>
+      </div>
+      <div class="chip-row">
+        <span class="chip">Flask</span>
+        <span class="chip">SQLite</span>
+        <span class="chip">Gemini API</span>
+        <span class="chip">Chart.js Dashboard</span>
+        <span class="chip">Cookie-based Access Control</span>
+      </div>
+    </div>
+
+    <div class="mock-card">
+      <div class="stamp"><span><strong>Gemini</strong>Analyzed</span></div>
+      <div class="mock-topline">
+        <span class="mock-title"><span class="signal-mark" style="height:14px;"><i></i><i></i><i></i><i></i></span>Feedback Dashboard</span>
+        <span class="mock-badge">AI Powered</span>
+      </div>
+      <div class="mock-stats">
+        <div class="mock-stat"><span class="num">142</span><span class="lbl">Responses</span></div>
+        <div class="mock-stat"><span class="num">74%</span><span class="lbl">Positive sentiment</span></div>
+        <div class="mock-stat"><span class="num">6</span><span class="lbl">Questions/form</span></div>
+      </div>
+      <div class="mock-bars">
+        <i style="height:35%"></i><i style="height:60%"></i><i style="height:80%"></i>
+        <i style="height:45%"></i><i style="height:70%"></i><i style="height:55%"></i>
+        <i style="height:90%"></i><i style="height:40%"></i>
+      </div>
+      <div class="mock-tag-row">
+        <span class="mock-tag pos">Positive</span>
+        <span class="mock-tag neu">Neutral</span>
+        <span class="mock-tag neg">Negative</span>
+        <span class="mock-tag pos">Easy to use</span>
+        <span class="mock-tag neu">Needs dark mode</span>
+      </div>
+      <p class="mock-caption">Illustrative dashboard preview — actual figures depend on the responses each form collects.</p>
+    </div>
+  </div>
+</section>
+
+<section id="overview">
+  <div class="wrap">
+    <div class="overview-grid">
+      <div>
+        <span class="eyebrow">Project Overview</span>
+        <h2 style="font-size:1.6rem; margin-bottom:1rem;">From a form generator to a full feedback platform</h2>
+        <p>
+          The platform lets an admin describe a topic in plain language, and Gemini AI turns it into a
+          complete feedback form — ratings, multiple choice, yes/no, and open-ended questions — in one call.
+          Every generated form is archived permanently, so its shareable link keeps working no matter how
+          many newer forms get created after it.
+        </p>
+        <p>
+          Respondents need no account at all: they open the link, answer, and submit. Behind the scenes,
+          a browser cookie paired with a database constraint makes sure the same person can't submit the
+          same form twice — no login required on their end, just on the admin's.
+        </p>
+        <p>
+          Once responses start coming in, Gemini reads the open-ended answers and scores sentiment,
+          pulls out recurring keywords, and writes a short summary — cached in SQLite so the dashboard
+          never re-analyzes a response it has already seen.
+        </p>
+      </div>
+      <div class="fact-card">
+        <h3>At a glance</h3>
+        <ul class="fact-list">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg><span><b>One database file</b> — forms, responses and the sentiment cache all live in a single SQLite file.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg><span><b>Single admin login</b> gates form generation and the dashboard — no per-user accounts.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg><span><b>No login for respondents</b> — just a cookie token to stop double submissions.</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg><span><b>Deployed on Render</b> with a persistent disk so the database survives restarts.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="evolution">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Project Evolution</span>
+      <h2>How the application evolved during development</h2>
+      <p>Three real phases, in the order they actually happened.</p>
+    </div>
+    <div class="phase-track">
+      <div class="phase">
+        <span class="phase-eyebrow">Phase 1</span>
+        <h3>JSON forms + per-form CSV files</h3>
+        <p>
+          Every generated form was archived as its own JSON file, and every form's responses lived in a
+          matching CSV. Simple to reason about at first, but the data was scattered across three folders
+          per form (forms, feedback, sentiment_cache) with nothing tying them together relationally.
+        </p>
+      </div>
+      <div class="phase">
+        <span class="phase-eyebrow">Phase 2</span>
+        <h3>SQLite integration</h3>
+        <p>
+          Forms, responses, and the sentiment cache were consolidated into one SQLite database
+          (four tables: <code>forms</code>, <code>responses</code>, <code>sentiment_cache</code>,
+          <code>app_meta</code>), queried directly with Python's built-in <code>sqlite3</code>. A one-off
+          migration script imports any old JSON/CSV data so existing shareable links keep working.
+        </p>
+      </div>
+      <div class="phase">
+        <span class="phase-eyebrow">Phase 3</span>
+        <h3>AI-powered platform + duplicate protection</h3>
+        <p>
+          Gemini AI became the engine behind both form generation and response analysis — sentiment,
+          keywords, and summaries — surfaced on an interactive Chart.js dashboard. A respondent cookie
+          token plus a database-level unique constraint now blocks a second submission of the same form
+          from the same browser.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">AI Workflow Overview</span>
+      <h2>End-to-end flow, from prompt to public form</h2>
+    </div>
+    <div class="flow">
+      <div class="flow-step">
+        <span class="flow-index">01</span>
+        <h3>Admin login</h3>
+        <p>A single password gate (set via an environment variable) protects form generation, the forms list, and every dashboard.</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-index">02</span>
+        <h3>AI form generator</h3>
+        <p>Gemini turns a topic prompt into a structured set of questions — ratings, multiple choice, yes/no, and open text.</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-index">03</span>
+        <h3>Share form</h3>
+        <p>Each form gets its own permanent public URL, safe to share, that keeps working even after newer forms are generated.</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-index">04</span>
+        <h3>Submit feedback</h3>
+        <p>Respondents fill it out with no account needed. A cookie token stops the same browser from submitting twice.</p>
+      </div>
+      <div class="flow-step">
+        <span class="flow-index">05</span>
+        <h3>AI analysis</h3>
+        <p>Gemini scores sentiment, extracts keywords, and summarizes open answers, cached in SQLite for the dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="migration">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">JSON/CSV → SQLite Migration</span>
+      <h2>The architectural upgrade that made everything else possible</h2>
+      <p>Replacing scattered files with one relational-shaped database improved durability, consistency, and made duplicate-submission checks possible in the first place.</p>
+    </div>
+    <div class="compare">
+
+      <div class="compare-card new">
+        <h3>SQLite database</h3>
+        <ul>
+          <li>Four related tables in a single <code>app.db</code> file</li>
+          <li>A unique index enforces one response per respondent per form</li>
+          <li>WAL mode for safer concurrent reads/writes</li>
+          <li>One migration script imports all legacy data in one pass</li>
+          <li>Persists across restarts once placed on a Render Persistent Disk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="database">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Database Architecture</span>
+      <h2>Four tables, queried directly with <code>sqlite3</code></h2>
+      <p>No ORM — plain parameterized SQL, kept intentionally small and easy to reason about.</p>
+    </div>
+    <div class="schema-grid">
+      <div class="schema-card">
+        <div class="schema-head">forms <span>form definitions</span></div>
+        <div class="schema-body">
+          <div class="schema-row"><span class="col">form_id</span><span class="type">TEXT PRIMARY KEY</span></div>
+          <div class="schema-row"><span class="col">topic, title, description</span><span class="type">TEXT</span></div>
+          <div class="schema-row"><span class="col">created_at</span><span class="type">TEXT</span></div>
+          <div class="schema-row"><span class="col">questions_json</span><span class="type">TEXT</span></div>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-head">responses <span>submitted answers</span></div>
+        <div class="schema-body">
+          <div class="schema-row"><span class="col">response_id</span><span class="type">TEXT PRIMARY KEY</span></div>
+          <div class="schema-row"><span class="col">form_id</span><span class="type">TEXT → forms</span></div>
+          <div class="schema-row"><span class="col">respondent_token</span><span class="type">TEXT, UNIQUE per form</span></div>
+          <div class="schema-row"><span class="col">answers_json</span><span class="type">TEXT</span></div>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-head">sentiment_cache <span>Gemini results</span></div>
+        <div class="schema-body">
+          <div class="schema-row"><span class="col">response_id</span><span class="type">TEXT PRIMARY KEY</span></div>
+          <div class="schema-row"><span class="col">sentiment, score</span><span class="type">TEXT / REAL</span></div>
+          <div class="schema-row"><span class="col">summary, keywords</span><span class="type">TEXT</span></div>
+        </div>
+      </div>
+      <div class="schema-card">
+        <div class="schema-head">app_meta <span>small settings</span></div>
+        <div class="schema-body">
+          <div class="schema-row"><span class="col">key</span><span class="type">TEXT PRIMARY KEY</span></div>
+          <div class="schema-row"><span class="col">value</span><span class="type">TEXT</span></div>
+          <div class="schema-row"><span class="col">e.g. active_form_id</span><span class="type">pointer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="access">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Access &amp; Duplicate Protection</span>
+      <h2>One admin, no-login respondents, one submission each</h2>
+    </div>
+    <div class="access-grid">
+      <div class="access-card">
+        <div class="access-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Single admin login</h3>
+        <p>One password, set via an environment variable, gates form generation and every dashboard — no registration flow to maintain.</p>
+      </div>
+      <div class="access-card">
+        <div class="access-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+        <h3>Public, no-login forms</h3>
+        <p>Respondents never create an account. Anyone with the link can open and fill out the form directly.</p>
+      </div>
+      <div class="access-card">
+        <div class="access-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>One response per respondent</h3>
+        <p>A cookie token plus a SQLite unique index blocks a second submission from the same browser — enforced at the database, not just the UI.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai-engine">
+  <div class="wrap">
+    <div class="engine-grid">
+      <div>
+        <span class="eyebrow">Gemini AI Integration</span>
+        <h2 style="font-size:1.6rem; margin-bottom:1rem;">Gemini as the intelligence layer</h2>
+        <p style="color:var(--light); margin-bottom:1.25rem;">
+          Instead of manually reading every response, Gemini turns raw feedback into something usable —
+          before a person ever opens the dashboard.
+        </p>
+        <ul class="engine-list">
+          <li><span class="signal-mark" style="height:14px; margin-top:2px;"><i></i><i></i><i></i><i></i></span>Generates a complete question set from a one-line topic prompt</li>
+          <li><span class="signal-mark" style="height:14px; margin-top:2px;"><i></i><i></i><i></i><i></i></span>Reads open-ended answers directly out of SQLite</li>
+          <li><span class="signal-mark" style="height:14px; margin-top:2px;"><i></i><i></i><i></i><i></i></span>Scores sentiment — positive, neutral, negative — per response</li>
+          <li><span class="signal-mark" style="height:14px; margin-top:2px;"><i></i><i></i><i></i><i></i></span>Surfaces recurring keywords and a short written summary</li>
+          <li><span class="signal-mark" style="height:14px; margin-top:2px;"><i></i><i></i><i></i><i></i></span>Caches every result so nothing gets re-analyzed twice</li>
+        </ul>
+      </div>
+      <div class="engine-pipeline">
+        <span class="pipe-step">Topic prompt</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">Gemini API</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">Form / Analysis</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">SQLite cache</span><span class="pipe-arrow">→</span>
+        <span class="pipe-step">Dashboard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Project Features</span>
+      <h2>Key functionality implemented</h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card"><h3>AI form generator</h3><p>Creates a complete feedback form from a plain-language topic prompt.</p></div>
+      <div class="feature-card"><h3>Single admin login</h3><p>One password protects form generation and every dashboard view.</p></div>
+      <div class="feature-card"><h3>SQLite persistence</h3><p>Forms, responses, and the sentiment cache in one durable database file.</p></div>
+      <div class="feature-card"><h3>Shareable public forms</h3><p>Every form gets its own permanent link, safe to send out immediately.</p></div>
+      <div class="feature-card"><h3>Duplicate-submission protection</h3><p>A cookie token plus a unique index blocks a second submission per form.</p></div>
+      <div class="feature-card"><h3>Sentiment analysis</h3><p>Classifies open-ended answers as positive, neutral, or negative.</p></div>
+      <div class="feature-card"><h3>Gemini AI insights</h3><p>Generates summaries and pulls out recurring themes automatically.</p></div>
+      <div class="feature-card"><h3>Analytics dashboard</h3><p>Chart.js visualizations of response stats and AI-generated insights.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Technologies Used</span>
+      <h2>Tools behind the platform</h2>
+    </div>
+    <div class="stack-row">
+      <span class="stack-chip">Python</span>
+      <span class="stack-chip">Flask</span>
+      <span class="stack-chip">SQLite (sqlite3)</span>
+      <span class="stack-chip">Jinja2</span>
+      <span class="stack-chip">Gemini API</span>
+      <span class="stack-chip">Chart.js</span>
+      <span class="stack-chip">HTML5 / CSS3</span>
+      <span class="stack-chip">Render (deployment)</span>
+    </div>
+  </div>
+</section>
+
+<section id="highlights">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Project Highlights</span>
+      <h2>Major accomplishments</h2>
+    </div>
+    <div class="highlight-strip">
+      <div class="highlight"><span class="num">SQLite</span><span class="lbl">Migrated from JSON/CSV to one relational-shaped database</span></div>
+      <div class="highlight"><span class="num">Gemini AI</span><span class="lbl">Form generation and feedback analysis, end to end</span></div>
+      <div class="highlight"><span class="num">1&nbsp;per person</span><span class="lbl">Duplicate-submission protection, no login required</span></div>
+      <div class="highlight"><span class="num">Dashboard</span><span class="lbl">Interactive Chart.js analytics with cached AI insights</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Key Skills Developed</span>
+      <h2>Technical skills strengthened while building this</h2>
+    </div>
+    <div class="skill-cloud">
+      <span class="skill-pill">Python Programming</span>
+      <span class="skill-pill">Flask Development</span>
+      <span class="skill-pill">SQLite Database Design</span>
+      <span class="skill-pill">Gemini API Integration</span>
+      <span class="skill-pill">Prompt Engineering</span>
+      <span class="skill-pill">Sentiment Analysis</span>
+      <span class="skill-pill">Cookie-Based Session Handling</span>
+      <span class="skill-pill">Dashboard Development (Chart.js)</span>
+      <span class="skill-pill">Jinja2 Templating</span>
+      <span class="skill-pill">Responsive CSS Design</span>
+      <span class="skill-pill">REST-style Routing</span>
+      <span class="skill-pill">Deployment &amp; Persistent Storage (Render)</span>
+    </div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Learning Outcomes</span>
+      <h2>What this project taught me</h2>
+    </div>
+    <div class="learning-card">
+      <p>
+        This project marked a real milestone in turning a prototype into a durable, production-shaped
+        web app. I learned how to migrate from scattered JSON/CSV files to a single relational-shaped
+        SQLite database, design a small schema by hand with plain <code>sqlite3</code> rather than an
+        ORM, and enforce business rules — like one submission per respondent — at the database layer
+        instead of only in application code.
+      </p>
+      <p>
+        Integrating Gemini for two different jobs — generating forms and analyzing responses — sharpened
+        my prompt engineering, and thinking through cookie-based duplicate protection (without requiring
+        respondent accounts) taught me a lot about designing for anonymous users. Deploying to Render
+        also meant reasoning carefully about what "persistence" actually requires: a database file alone
+        isn't enough without disk that survives a restart.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="future">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Future Enhancements</span>
+      <h2>Where this could go next</h2>
+    </div>
+    <div class="future-grid">
+      <div class="future-card"><h3>Multi-admin accounts</h3><p>Optional per-user logins for teams that need separate workspaces.</p></div>
+      <div class="future-card"><h3>Email reports</h3><p>Automatically send AI-generated summaries to the admin on a schedule.</p></div>
+      <div class="future-card"><h3>Managed Postgres</h3><p>Move off single-instance SQLite for horizontally-scaled deployments.</p></div>
+      <div class="future-card"><h3>Multilingual analysis</h3><p>Extend Gemini sentiment scoring to non-English responses.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="signal-mark"><i></i><i></i><i></i><i></i></span>
+    <p><strong>AI Feedback Analysis Platform</strong></p>
+
+  </div>
+</footer>
+
+</body>
+</html>

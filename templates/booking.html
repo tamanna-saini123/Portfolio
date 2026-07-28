@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Booking.com Hotel Scraper</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/booking.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-dark px-4">
+
+    <a class="navbar-brand fw-bold" href="/">My Portfolio</a>
+
+    <a href="/dynamicscraping" class="btn btn-outline-light btn-sm">
+        ← Back
+    </a>
+
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+
+    <div class="container text-center">
+
+        <h1>
+            <i class="fa-solid fa-hotel"></i>
+            Booking.com Hotel Scraper
+        </h1>
+
+        <p>Dynamic Hotel Data Scraping using Selenium</p>
+
+    </div>
+
+</section>
+
+<!-- Hotels -->
+
+<div class="container py-5">
+
+    <div class="row g-4">
+
+        {% for hotel in hotels %}
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="hotel-card">
+
+                <img src="{{ hotel['Image URL'] }}"
+                     alt="{{ hotel['Hotel Name'] }}">
+
+                <div class="hotel-body">
+
+                    <h4>{{ hotel['Hotel Name'] }}</h4>
+
+                    <div class="rating">
+
+                        ⭐ {{ hotel['Rating'] }}
+
+                    </div>
+
+                    <a href="{{ hotel['Hotel Link'] }}"
+                       target="_blank"
+                       class="btn btn-primary w-100 mt-3">
+
+                        View Hotel
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
